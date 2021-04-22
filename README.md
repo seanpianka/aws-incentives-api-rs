@@ -17,7 +17,7 @@ Using the service is simple. Instantiate the service with the following credenti
 * AWS Incentives API URL
 
 ```rust
-let service: impl IncentivesService = new_service(
+let service = new_service(
     "PartnerID".to_string(),
     "AccessKey".to_string(),
     "SecretKey".to_string(),
