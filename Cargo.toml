@@ -1,0 +1,27 @@
+[package]
+name = "aws-incentives-api"
+version = "0.1.0"
+authors = ["Sean Pianka <pianka@eml.cc>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-trait = "0.1.50"
+base64 = "0.13"
+chrono = "0.4"
+hex = "0.4.3"
+hmac = "0.10"
+reqwest = "0.11"
+serde = { version = "1.0", features = ["std", "derive"] }
+serde_json = "1"
+sha2 = "0.9"
+tokio = { version = "1", default-features = false, features = ["test-util", "sync", "macros", "rt-multi-thread"] }
+uuid = { version = "0.8", features = ["serde", "v4"] }
+
+[profile.dev]
+codegen-units = 16
+opt-level = 1
+debug = false
+split-debuginfo = "unpacked"
+
