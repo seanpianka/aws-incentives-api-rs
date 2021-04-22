@@ -32,6 +32,7 @@ pub fn new_service(
     aws_incentives_secret_signing_key: String,
     aws_incentives_host: String,
     aws_incentives_url: String,
+    aws_region_name: String,
 ) -> impl IncentivesService {
     ServiceImpl::new(
         aws_partner_id,
@@ -39,6 +40,7 @@ pub fn new_service(
         aws_incentives_secret_signing_key,
         aws_incentives_host,
         aws_incentives_url,
+        aws_region_name,
     )
 }
 
@@ -61,6 +63,7 @@ impl ServiceImpl {
         aws_incentives_secret_signing_key: String,
         aws_incentives_host: String,
         aws_incentives_url: String,
+        aws_region_name: String,
     ) -> Self {
         Self {
             aws_partner_id,
@@ -68,7 +71,7 @@ impl ServiceImpl {
             aws_incentives_secret_signing_key,
             aws_incentives_host,
             aws_incentives_url,
-            aws_region_name: "us-east-1".to_string(),
+            aws_region_name,
             incentive_amount: 5,
         }
     }
